@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black" >
+    <div >
+        <h1 id="title" class="heading">DOM learning on chai and code <span style ="display: none;">test text</span></h1>
+        <h1>my name is aryan Tomar </h1>
+        <h1>her name is saloni</h1>
+
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor, sit amet consectetur adipisicing.</h2>
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class = "list-item">item 1</li>
+            <li class = "list-item">item 2</li>
+            <li class = "list-item">item 3</li>
+            <li class = "list-item">item 4</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+<!-- This give the full content of webpage that is hinned or not 
+document.getElementById("title").textContent -->
+
+<!-- This give the content that is only visible on the web page
+document.getElementById("title").innerText -->
+
+
+<!-- this give the inner html if he particular thing that is selected by if og the web page
+document.getElementById("title").innerHTML -->
+
+
+<!-- this will give first h1 on the web page
+document.querySelector('h1') -->
+
+
+<!-- this is used to find the particular ID in the webpage
+document.querySelector('#title') -->
+
+
+<!-- This is used to find the particular classname in the webpage
+document.querySelector('.heading') -->
+
+<!-- this is used to find the particular classname in web page
+document.querySelector('input[type="password"]') -->
+
+<!-- this way you can manipulate the dom nodeList
+const tempclasslist = document.getElementsByClassName("list-item")
+const myarr = Array.from(tempclasslist)
+myarr.forEach(function (li) {
+    li.style.color = 'orange'
+}) -->
