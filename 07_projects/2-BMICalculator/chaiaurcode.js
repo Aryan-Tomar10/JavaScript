@@ -1,14 +1,3 @@
-// const height = document.getElementById("height");
-// const weight = document.getElementById("weight");
-
-// const calculate = document.querySelector('button');
-// // console.log(calculate);
-
-// calculate.addEventListener('click', function(e){
-//     console.log(e.target);
-// })
-
-
 const form = document.querySelector('form');
 
 form.addEventListener('submit', function(e){
@@ -26,7 +15,23 @@ form.addEventListener('submit', function(e){
     // results.innerHTML = `${weight}`;
     else{
         const bmi = (weight / ((height * height) / 10000)).toFixed(2);
-        results.innerHTML = `<span>${bmi}</span>`;
-    }
-})
+        
+        const ranges = document.querySelectorAll('#weight-guide p');
+        let value = '';
 
+        // console.log(ranges);
+        ranges.forEach(function(range){
+            if(bmi >= 10 && bmi < 18.5){
+                value = ranges[0].textContent
+                // console.log(value);
+            }else if(bmi >= 18.5 && bmi < 25){
+                value = ranges[1].textContent
+                // console.log(value);
+            }else{
+                value = ranges[2].textContent
+                // console.log(value);
+            }
+        })
+        results.innerHTML = `<span>${bmi} and catagory is ${value}</span>`;
+    }
+});
