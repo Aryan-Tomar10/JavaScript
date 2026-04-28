@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //the first approach is to insert the element directly into HTML
+    //second approach
+    // document.getElementById('owl').onclick = function () {
+    //     alert("owl clicked")        
+    // }
+    
+    //attachEvent()
+    //jQuery - on
+    
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+
+    //third approach
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     // alert("owl clicked")
+    //     console.log(e);
+    // },false)
+
+
+    //this true in last us bubbling event which is by default false but if you make it true then first it will show the whole container and then the particular event inside that scope
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log("clicked inside ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click', function (e) {
+    //     console.log("owl clicked");
+    //     e.stopPropagation();
+    // },false)
+
+
+    
+    //if i dont want to go on google on clicking on the google link on the site 
+    // document.getElementById('google').addEventListener('click',function name(e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+    // },false)
+
+    //i want that when i click on the image it will be vanished
+    // const deleteimg = document.querySelector('#images');
+    // console.log(deleteimg);
+    
+    // deleteimg.addEventListener('click',function name(e){
+    //     // e.target.style.display = 'none';
+    //     // console.log(e.target.parentNode)
+    //     let removeit = e.target.parentNode;
+    //     // removeit.remove();
+    //     removeit.parentNode.removeChild(removeit);
+    // })
+
+    // document.getElementById('photoshop').addEventListener('click',function name(e){
+    //     e.target.style.display = 'none';
+    // })
+
+
+    document.querySelector('#images').addEventListener('click',function name(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName = 'IMG'){
+            console.log(e.target.id)
+            let removeit = e.target.parentNode;
+            removeit.parentNode.removeChild(removeit); 
+        }
+    })
+
+</script>
+</html>
