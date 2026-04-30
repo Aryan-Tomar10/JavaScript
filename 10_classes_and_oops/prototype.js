@@ -72,14 +72,14 @@ console.log(Object.getPrototypeOf(TeacherSupport));
 
 
 
-// let anotherUsername = 'AryanTomar.    '
+let anotherUsername = 'AryanTomar.    '
 
-// String.prototype.truelength = function () {
-//     // console.log(`${this}`);
-//     console.log(`True length is : ${this.trim().length}`);
-//     return this.trim().length
-// }
+String.prototype.truelength = function () {
+    // console.log(`${this}`);
+    console.log(`True length is : ${this.trim().length}`);
+    return this.trim().length
+}
 
-// anotherUsername.truelength()
-// ' '.truelength()
+anotherUsername.truelength()
+' '.truelength()
 
